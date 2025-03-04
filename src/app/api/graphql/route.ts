@@ -1,7 +1,7 @@
 import { ApolloServer } from "@apollo/server";
 import { startServerAndCreateNextHandler } from "@as-integrations/next";
-import { typeDefs } from "@/graphql/schema";
-import { resolvers } from "@/graphql/resolvers";
+import { typeDefs } from "@/lib/graphql/schema";
+import { resolvers } from "@/lib/graphql/resolvers";
 import { NextRequest } from "next/server";
 
 if (!process.env.NEXT_PUBLIC_API_BASE_URL) {
