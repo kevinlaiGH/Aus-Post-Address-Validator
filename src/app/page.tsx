@@ -1,22 +1,21 @@
 "use client";
 import { useQuery } from '@apollo/client';
-import { SEARCH_LOCALITIES } from '@/graphql/queries';
-
+import { AddressForm } from "./components/AddressForm";
 
 export default function Home() {
-  const { data } = useQuery(SEARCH_LOCALITIES, {
-    variables: {
-      q: "2000",
-      state: "NSW"
-    }
-  });
-  const localities = data?.searchLocalities?.localities?.locality || [];
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        Aus Post Address Validator
-        <p>{JSON.stringify(localities)}</p>
-      </main>
+    <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-md mx-auto">
+        <div className="text-center mb-8">
+          <h1 className="text-3xl font-bold text-gray-900">
+            Address Validator
+          </h1>
+          <p className="mt-2 text-sm text-gray-600">
+            Enter an address to validate it against the Australia Post database
+          </p>
+        </div>
+        <AddressForm />
+      </div>
     </div>
   );
 }

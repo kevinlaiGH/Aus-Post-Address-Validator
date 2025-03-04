@@ -3,7 +3,7 @@ import { gql } from "@apollo/client";
 export const typeDefs = gql`
   type Locality {
     category: String
-    id: ID!
+    id: Int!
     latitude: Float
     location: String
     longitude: Float
