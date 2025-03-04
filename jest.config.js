@@ -1,17 +1,21 @@
 /** @type {import('jest').Config} */
 const config = {
-  preset: 'ts-jest',
-  testEnvironment: 'node',
+  testEnvironment: 'jsdom',
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
+    '^@testing-library/jest-dom$': require.resolve('@testing-library/jest-dom'),
+    "\\.(css|less|sass|scss)$": "identity-obj-proxy",
   },
   transform: {
-    '^.+\\.tsx?$': ['ts-jest', {
-      tsconfig: 'tsconfig.json'
-    }]
+    '^.+\\.(ts|tsx|js|jsx)$': ['babel-jest']
   },
-  testMatch: ['**/__tests__/**/*.test.ts?(x)'],
-  setupFiles: ['<rootDir>/jest.setup.js'],
+  testMatch: [
+    '**/__tests__/**/*.test.[jt]s?(x)',
+  ],
+  setupFilesAfterEnv: ['<rootDir>/src/app/components/__tests__/setup.ts'],
+  transformIgnorePatterns: [
+    '/node_modules/(?!(@testing-library|@babel|@jest)/)',
+  ],
 };
 
 module.exports = config;
