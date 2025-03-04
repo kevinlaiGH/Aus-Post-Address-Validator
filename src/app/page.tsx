@@ -1,6 +1,4 @@
 "use client";
-import { useQuery } from '@apollo/client';
-import { VALIDATE_ADDRESS } from '@/lib/graphql/queries';
 import { AddressForm } from "./components/AddressForm";
 
 export default function Home() {

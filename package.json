@@ -23,11 +23,9 @@
     "zod": "^3.24.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.26.9",
-    "@babel/preset-env": "^7.26.9",
-    "@babel/preset-react": "^7.26.3",
-    "@babel/preset-typescript": "^7.26.0",
     "@eslint/eslintrc": "^3",
+    "@swc/core": "^1.11.6",
+    "@swc/jest": "^0.2.37",
     "@tailwindcss/postcss": "^4",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.2.0",
@@ -37,7 +35,6 @@
     "@types/node-fetch": "^2.6.12",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "babel-jest": "^29.7.0",
     "eslint": "^9",
     "eslint-config-next": "15.2.0",
     "identity-obj-proxy": "^3.0.0",

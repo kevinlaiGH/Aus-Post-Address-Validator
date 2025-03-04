@@ -1,4 +1,4 @@
-import { AddressValidationResult, AddressSuggestion } from "../types";
+import { AddressValidationResult, AddressSuggestion } from "@/lib/types";
 
 interface ValidationResultProps {
   result: AddressValidationResult;
@@ -17,7 +17,7 @@ export const ValidationResult = ({ result, onSuggestionClick }: ValidationResult
             key={`${suggestion.suburb}-${suggestion.postcode}`}
             type="button"
             onClick={() => onSuggestionClick(suggestion)}
-            className="text-blue-600 hover:text-blue-800 underline focus:outline-none"
+            className="bold italic text-blue-600 hover:text-blue-800 underline focus:outline-none"
           >
             {suggestion.suburb} ({suggestion.postcode})
           </button>

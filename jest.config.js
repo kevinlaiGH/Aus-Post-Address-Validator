@@ -7,7 +7,7 @@ const config = {
     "\\.(css|less|sass|scss)$": "identity-obj-proxy",
   },
   transform: {
-    '^.+\\.(ts|tsx|js|jsx)$': ['babel-jest']
+    '^.+\\.(ts|tsx|js|jsx)$': ['@swc/jest'],
   },
   testMatch: [
     '**/__tests__/**/*.test.[jt]s?(x)',
