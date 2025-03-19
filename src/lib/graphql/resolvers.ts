@@ -1,9 +1,12 @@
 import fetch from "node-fetch";
 import { SearchLocalitiesArgs } from "@/lib/types";
 
-const API_BASE_URL =
-  "https://gavg8gilmf.execute-api.ap-southeast-2.amazonaws.com/staging/postcode/search.json";
-const API_TOKEN = "7710a8c5-ccd1-160f-70cf03e8-b2bbaf01";
+if (!process.env.NEXT_PUBLIC_API_BASE_URL || !process.env.API_TOKEN) {
+  throw new Error('API configuration is missing. Please check your .env file.');
+}
+
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
+const API_TOKEN = process.env.API_TOKEN;
 
 export const resolvers = {
   Query: {
